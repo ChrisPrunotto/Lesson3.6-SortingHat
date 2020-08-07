@@ -2,19 +2,122 @@
 //
 
 #include <iostream>
+#include <string>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+
+	//Sorting Hat Program
+
+	int gryffindorPoints = 0, hufflepuffPoints = 0, ravenclawPoints = 0, slytherinPoints = 0;
+	int answer1, answer2, answer3, answer4;
+
+	std::cout << "Welcome to the Sorting Hat Quiz!";
+
+	std::cout << "\n--\nQ1) When I'm dead, I want people to remember me as: \n    1) The Good\n    2) The Great\n    3) The Wise\n    4) The Bold \nEnter Your Selection: ";
+	std::cin >> answer1;
+
+	switch (answer1) {
+	case 1:
+		hufflepuffPoints++;
+		break;
+	case 2:
+		slytherinPoints++;
+		break;
+	case 3:
+		ravenclawPoints++;
+		break;
+	case 4:
+		gryffindorPoints++;
+		break;
+	default:
+		std::cout << "Invalid input.";
+		break;
+	}
+
+	std::cout << "\n--\nQ2) Dawn or Dusk? \n    1) Dawn\n    2) Dusk \nEnter Your Selection: ";
+	std::cin >> answer2;
+
+	switch (answer2) {
+	case 1:
+		gryffindorPoints++;
+		ravenclawPoints++;
+		break;
+	case 2:
+		hufflepuffPoints++;
+		slytherinPoints++;
+		break;
+	default:
+		std::cout << "Invalid input.";
+		break;
+	}
+
+	std::cout << "\n--\nQ3) Which kind of instrument most pleases your ear? \n    1) The violin \n    2) The trumpet\n    3) The piano\n    4) The drum \nEnter Your Selection: ";
+
+	std::cin >> answer3;
+
+	switch (answer3) {
+	case 1:
+		slytherinPoints++;
+		break;
+	case 2:
+		hufflepuffPoints++;
+		break;
+	case 3:
+		ravenclawPoints++;
+		break;
+	case 4:
+		gryffindorPoints++;
+		break;
+	default:
+		std::cout << "Invalid input.";
+		break;
+	}
+
+	std::cout << "\n--\nQ4) Which road tempts you most?  \n    1) The wide, sunny, grassy lane \n    2) The narrow, dark, lantern-lit alley\n    3) The twisting, leaf-strewn path through woods \n    4) The cobbled street lined with ancient buildings \nEnter Your Selection: ";
+
+	std::cin >> answer4;
+
+	switch (answer4) {
+	case 1:
+		hufflepuffPoints++;
+		break;
+	case 2:
+		slytherinPoints++;
+		break;
+	case 3:
+		gryffindorPoints++;
+		break;
+	case 4:
+		ravenclawPoints++;
+		break;
+	default:
+		std::cout << "Invalid input.";
+		break;
+	}
+
+	std::string house;
+	int max = 0;
+
+	if (gryffindorPoints > max)
+	{
+		max = gryffindorPoints;
+		house = "Gryffindor";
+	}
+	if (hufflepuffPoints > max)
+	{
+		max = hufflepuffPoints;
+		house = "Hufflepuff";
+	}
+	if (ravenclawPoints > max)
+	{
+		max = ravenclawPoints;
+		house = "Ravenclaw";
+	}
+	if (slytherinPoints > max)
+	{
+		max = slytherinPoints;
+		house = "Slytherin";
+	}
+
+	std::cout << "\n--\nYou've been placed in house " << house << "!\n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
